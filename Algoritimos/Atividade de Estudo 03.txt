@@ -1,0 +1,71 @@
+Algoritmo valor_pagar
+
+Var 
+	cadastro_Catador, cod_Digitado: inteiro 
+	pesoProduto, valorPagar : real
+	nome_Catador : Vetor[1..30] de caratere
+		
+	dadosProd: Vetor [1..4, 1..2] de real
+	tiposProdutos: Vetor [1..4] de Vetor[30] de caractere
+
+Inicío
+	// Armazenando os Códigos na Matriz
+	dadosProd[1, 1] <- 1
+	dadosProd[2, 1] <- 2
+	dadosProd[3, 1] <- 3
+	dadosProd[4, 1] <- 4
+
+	// Armazenando os Valores na Matriz
+	dadosProd[1, 2] <- 0.25
+	dadosProd[2, 2] <- 0.32
+	dadosProd[3, 2] <- 0.05
+	dadosProd[4, 2] <- 0.15
+
+	// Armazenando os Produtos no Vetor
+	tiposProdutos[1] <- "Plástico"
+	tiposProdutos[2] <- "Vidro"
+	tiposProdutos[3] <- "Papel"
+	tiposProdutos[4] <- "Metal"
+
+	Escreva("Digite o nome do Catador:")
+	Leia(nome_Catador)
+	Escreva("Digite o cadastro do Catador:")
+	Leia(cadastro_Catador)
+
+	// Menu dos Produtos
+	Escreva("========================================="/n)
+
+	Escreva(dadosProd[1, 1], " - ", tiposProdutos[1])
+	Escreva(dadosProd[2, 1], " - ", tiposProdutos[2])
+	Escreva(dadosProd[3, 1], " - ", tiposProdutos[3])
+	Escreva(dadosProd[4, 1], " - ", tiposProdutos[4])
+
+	Escreva("========================================="/n)
+	
+	Escreva("Digite o Código do Produto")
+	Leia(cod_Digitado)
+		
+	Enquanto (cod_Digitado > 4 ou cod_Digitado < 1) faça
+		Escreva("Código inválido!")
+		Leia(cod_Digitado)
+	Fim_enquanto
+		
+	Escreva("Digite o peso total:")
+	Leia(pesoProduto)	
+		
+	Caso cod_Digitado
+		Seja 1 faça 
+			valorPagar <- pesoProduto * dadosProd[1, 2]
+		Seja 2 faça 
+			valorPagar <- pesoProduto * dadosProd[2, 2]
+		Seja 3 faça 
+			valorPagar <- pesoProduto * dadosProd[3, 2]
+		Seja 4 faça 
+			valorPagar <- pesoProduto * dadosProd[4, 2]
+		Senão
+	Fim_caso
+	
+	Escreva(nome_Catador, "com cadastro n. ", cadastro_Catador, "trouxe ", pesoProduto, "quilos de ", tiposProdutos[cod_Digitado], "total a receber R$ ", valorPagar)	
+
+Fim
+			

@@ -1,0 +1,19 @@
+Algoritmo: calculo_comissao
+
+	var salarioFixo, valorVendas, porcentComissao, salarioFinal, valorComissao: real
+	
+Início
+	Escreva("Digite o valor do Salário Fixo:");
+	Leia(salarioFixo);
+	Escreva("Digite o valor de Vendas");
+	Leia(valorVendas);
+	Escreva("Atenção: Digite o valor a seguir sem o sinal(%)");
+	Escreva("Digite o percentual de Comissão:");
+	Leia(porcentComissao);
+	
+	porcentComissao <- porcentComissao / 100;
+	valorComissao <- valorVendas * porcentComissao;
+	salarioFinal <- salarioFixo + valorComissao;
+	
+	Escreva("A comissão é de: ", valorComissao, ", e o Salário Final é de: ", salarioFinal);
+Fim

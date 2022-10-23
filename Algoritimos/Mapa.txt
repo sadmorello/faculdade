@@ -1,0 +1,96 @@
+Algoritimo sistemaCliente_Notas
+
+Tipo
+	Cad_Client = registro
+		nome: Vetor [1..30] de caractere
+		nota: Vetor [1..10] de real
+		somaNotas: Vetor [1..20] de real
+Fim_registro
+
+Procedimento cadastro(cliente: Vetor[1..20] de Cad_Client)
+
+Var	
+	i, j: inteiro
+Inicio
+	i <- 0
+	j <- 0
+	Para i de 1 ate 20 passo 1 faca
+		Escreva("Digite o nome do Cliente:")
+		Leia(cliente[i].nome)
+			Para j de 1 ate 10 passo 1 faca
+				Escreva("Digite o valor da notinha número: ", j)
+				Leia(cliente[i].nota[j])
+			Fim_para
+	Fim_para
+Fim_procedimento
+
+Procedimento resumoClienteValor(clienteResumo: Vetor[1..20] de Cad_Client)
+
+Var 
+	x, y:inteiro
+Inicio
+	x <- 0
+	y <- 0
+	
+	
+	Para x de 1 ate 20 passo 1 faca		
+		Para y de 1 ate 10 passo 1 faca		
+			clienteResumo[x].somaNotas <- clienteResumo[x].somaNotas + cliente[x].nota[y]
+		Fim_para
+	Fim_para
+		
+
+	Para n de 1 ate 20 passo 1 faca
+		Escreva("Cliente: ", clienteResumo[n].nome, "Total: ", clienteResumo[n].somaNota)
+	Fim_para
+
+Fim_procedimento
+
+Procedimento mostrarClienteValor(clienteMostrar: Vetor[1..20] de Cad_Client)
+
+Var k, l, m, n:int
+
+Inicio
+	Escreva("Escreva o nome do Cliente: ")
+	Leia(n)
+
+	Para m de 1 ate 20 passo 1 faca
+		Se clienteMostrar[m].nome = n entao
+			k <- m
+		Fim_se
+	Fim_para	
+	
+	Para l de 1 ate 10 passo 1 faca
+		Escreva("Nota", num, ":", clienteMostrar[k].nota[l])
+	Fim_para
+	Escreva("Total:", clienteMostrar[k].somaNota)
+Fim_procedimento
+
+Var
+	opcao: inteiro
+	cliente: Vetor[1..20] de Cad_Client
+Inicio	
+	opcao <- 0
+	Escreva("Seja bem vindo(a)!!!")	
+	Enquanto opcao <> 5 faca		
+		Escreva("Escolha uma das opções lista abaixo")
+		Escreva("1 - Cadastrar nota")
+		Escreva("2 - Resumo de Clientes")
+		Escreva("3 - Mostrar Cliente Específico")	
+		Escreva("5 - Sair")
+	
+		Leia(opcao)
+
+		Enquanto (opcao > 5 e opcao < 0)
+			Escreva("Opção inválida! Tente novamente:")
+			Leia(opcao)
+		Fim_enquanto
+
+		Caso varDigitado
+			Seja 1 faça cadastro(cliente)
+			Seja 2 faça resumoClienteValor(cliente)
+			Seja 3 faça mostrarClienteValor(cliente)
+			Senão
+		Fim_caso		
+	Fim_enquanto
+Fim
