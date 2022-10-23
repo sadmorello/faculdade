@@ -1,18 +1,16 @@
-## Getting Started
+# Descrição da Atividade​
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+    Considere que você é um desenvolvedor que foi contratado por uma empresa para apresentar uma solução tecnológica para calcular o salário e desconto de cada funcionário da empresa.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    A empresa solicitou que você construa um sistema que auxilie no salário dos seus funcionários. Pensando nesta demanda, você decide desenvolver um sistema em JAVA para esta solução.
+ 
+***A empresa necessita que seja registrado para cada funcionário:***
+ 
+- salário bruto
+- percentual de desconto
+ 
+***Após ser lançado as informações, a empresa espera que sejam exibidos:***
+ 
+- salário bruto do funcionário
+- valor do desconto
+- salário líquido.
